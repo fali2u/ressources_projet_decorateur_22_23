@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="ressources_projet_decorateur_22_23">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/docmesmaths.zip!/" />
+      <root url="jar://$PROJECT_DIR$/malibrairiegui.jar!/" />
+      <root url="jar://$PROJECT_DIR$/malibsonique.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mesmaths_sources_avec_awt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/exodecorateur_angryballs_maladroit_sources.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

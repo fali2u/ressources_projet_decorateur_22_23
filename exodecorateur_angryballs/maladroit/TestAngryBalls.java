@@ -11,6 +11,7 @@ import exodecorateur_angryballs.maladroit.modele.decorateur.acceleration.BilleNe
 import exodecorateur_angryballs.maladroit.modele.decorateur.acceleration.BillePesanteur;
 import exodecorateur_angryballs.maladroit.modele.decorateur.collision.BillePasseMuraille;
 import exodecorateur_angryballs.maladroit.modele.decorateur.collision.BilleRebond;
+import exodecorateur_angryballs.maladroit.modele.state.ManagerEtat;
 import mesmaths.geometrie.base.Vecteur;
 import musique.SonLong;
 import exodecorateur_angryballs.maladroit.vues.CadreAngryBalls;
@@ -92,6 +93,8 @@ v4 = Vecteur.créationAléatoire(-vMax, -vMax, vMax, vMax);
     billes.add(new BillePesanteur(new BilleFrottement(new BilleRebond(new BilleNue(p1, rayon,v1, Color.yellow))),new Vecteur(0, 0.001)));
     billes.add(new BilleNewton(new BilleFrottement(new BilleRebond(new BilleNue(p2, rayon,v2, Color.green)))));
     billes.add(new BillePasseMuraille(new BilleNue(p3, rayon, v3, Color.cyan)));
+
+    ManagerEtat managerEtat = new ManagerEtat(billes, cadre.billard);
     //bille.add(new BilleHurlante(new BilleNewton(p4, rayon, v4, Color.black, hurlements[choixHurlementInitial], cadre)))
 
     /*BilleHurlanteMvtNewtonArret billeNoire;         // cas particulier de la bille qui hurle

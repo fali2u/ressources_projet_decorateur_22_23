@@ -4,16 +4,16 @@ import java.awt.Color;
 import java.io.File;
 import java.util.Vector;
 
+import exodecorateur_angryballs.maladroit.modele.decorateur.Bille;
+import exodecorateur_angryballs.maladroit.modele.decorateur.BilleNue;
+import exodecorateur_angryballs.maladroit.modele.decorateur.acceleration.BilleFrottement;
+import exodecorateur_angryballs.maladroit.modele.decorateur.acceleration.BilleNewton;
+import exodecorateur_angryballs.maladroit.modele.decorateur.acceleration.BillePesanteur;
+import exodecorateur_angryballs.maladroit.modele.decorateur.collision.BillePasseMuraille;
+import exodecorateur_angryballs.maladroit.modele.decorateur.collision.BilleRebond;
 import mesmaths.geometrie.base.Vecteur;
 import musique.SonLong;
-import exodecorateur_angryballs.maladroit.modele.Bille;
-import exodecorateur_angryballs.maladroit.modele.BilleHurlanteMvtNewtonArret;
-import exodecorateur_angryballs.maladroit.modele.BilleMvtNewtonFrottementRebond;
-import exodecorateur_angryballs.maladroit.modele.BilleMvtRUPasseMurailles;
-import exodecorateur_angryballs.maladroit.modele.BilleMvtRURebond;
-import exodecorateur_angryballs.maladroit.modele.BilleMvtPesanteurFrottementRebond;
 import exodecorateur_angryballs.maladroit.vues.CadreAngryBalls;
-import exodecorateur_angryballs.maladroit.vues.VueBillard;
 
 
 /**
@@ -88,16 +88,17 @@ v4 = Vecteur.créationAléatoire(-vMax, -vMax, vMax, vMax);
 
 //--------------- ici commence la partie à changer ---------------------------------
 
-billes.add(new         BilleMvtRURebond(p0, rayon, v0, Color.red));
-billes.add(new      BilleMvtPesanteurFrottementRebond(p1, rayon, v1, new Vecteur(0,0.001), Color.yellow));
-billes.add(new              BilleMvtNewtonFrottementRebond(p2, rayon, v2, Color.green));
-billes.add(new              BilleMvtRUPasseMurailles(p3, rayon, v3, Color.cyan));
+    billes.add(new BilleRebond(new BilleNue(p0, rayon, v0, Color.red)));
+    billes.add(new BillePesanteur(new BilleFrottement(new BilleRebond(new BilleNue(p1, rayon,v1, Color.yellow))),new Vecteur(0, 0.001)));
+    billes.add(new BilleNewton(new BilleFrottement(new BilleRebond(new BilleNue(p2, rayon,v2, Color.green)))));
+    billes.add(new BillePasseMuraille(new BilleNue(p3, rayon, v3, Color.cyan)));
+    //bille.add(new BilleHurlante(new BilleNewton(p4, rayon, v4, Color.black, hurlements[choixHurlementInitial], cadre)))
 
-BilleHurlanteMvtNewtonArret billeNoire;         // cas particulier de la bille qui hurle
+    /*BilleHurlanteMvtNewtonArret billeNoire;         // cas particulier de la bille qui hurle
 
-billes.add(billeNoire = new BilleHurlanteMvtNewtonArret(p4, rayon, v4,  Color.black,hurlements[choixHurlementInitial], cadre));
+    billes.add(billeNoire = new BilleHurlanteMvtNewtonArret(p4, rayon, v4,  Color.black,hurlements[choixHurlementInitial], cadre));
 
-cadre.addChoixHurlementListener(billeNoire);  // à présent on peut changer le son de la bille qui hurle
+    cadre.addChoixHurlementListener(billeNoire);  // à présent on peut changer le son de la bille qui hurle*/
 
 //---------------------- ici finit la partie à changer -------------------------------------------------------------
 

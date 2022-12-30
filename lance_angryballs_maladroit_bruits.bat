@@ -1,1 +1,0 @@
-java -classpath .;malibsonique.jar;malibrairiegui.jar;mesmaths_sources_avec_awt.jar exodecorateur_angryballs.maladroit.TestAngryBalls

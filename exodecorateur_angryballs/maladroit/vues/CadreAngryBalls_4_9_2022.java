@@ -3,9 +3,8 @@ package exodecorateur_angryballs.maladroit.vues;
 import java.awt.*;
 import java.util.Vector;
 
-import exodecorateur_angryballs.maladroit.modele.Bille;
 
-
+import exodecorateur_angryballs.maladroit.modele.decorateur.Bille;
 import outilsvues.EcouteurTerminaison;
 
 import outilsvues.Outils;

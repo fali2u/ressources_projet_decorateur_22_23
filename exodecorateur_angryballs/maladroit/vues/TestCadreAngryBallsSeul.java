@@ -1,19 +1,11 @@
 package exodecorateur_angryballs.maladroit.vues;
 
-import java.awt.Frame;
 import java.io.File;
-import java.io.IOException;
 import java.util.Vector;
 
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
-
 import exodecorateur_angryballs.maladroit.OutilsConfigurationBilleHurlante;
-import exodecorateur_angryballs.maladroit.modele.Bille;
-import musique.SonBref;
-import musique.SonBrefFantome;
+import exodecorateur_angryballs.maladroit.modele.decorateur.Bille;
 import musique.SonLong;
-import musique.javax.SonBrefJavax;
 
 
 public class TestCadreAngryBallsSeul

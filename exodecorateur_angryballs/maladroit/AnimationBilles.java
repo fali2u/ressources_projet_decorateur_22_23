@@ -2,7 +2,7 @@ package exodecorateur_angryballs.maladroit;
 
 import java.util.Vector;
 
-import exodecorateur_angryballs.maladroit.modele.Bille;
+import exodecorateur_angryballs.maladroit.modele.decorateur.Bille;
 import exodecorateur_angryballs.maladroit.vues.VueBillard;
 
 /**
@@ -87,7 +87,7 @@ int i;
 double vitesse2Courante;
 
 for ( i = 0; i < billes.size(); ++i)
-    if ( (vitesse2Courante = billes.get(i).vitesse.normeCarrée()) > vitesse2Max)
+    if ( (vitesse2Courante = billes.get(i).getVitesse().normeCarrée()) > vitesse2Max)
        vitesse2Max = vitesse2Courante; 
 
 return vitesse2Max;
@@ -106,7 +106,7 @@ rayonMin = Double.MAX_VALUE;
 
 int i;
 for ( i = 0; i < billes.size(); ++i)
-    if ( ( rayonCourant = billes.get(i).rayon) < rayonMin)
+    if ( ( rayonCourant = billes.get(i).getRayon()) < rayonMin)
        rayonMin = rayonCourant;
 
 return rayonMin;

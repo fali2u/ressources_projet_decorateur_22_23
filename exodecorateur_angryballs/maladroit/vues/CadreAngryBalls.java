@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.ItemListener;
 import java.util.Vector;
 
-import exodecorateur_angryballs.maladroit.modele.Bille;
+import exodecorateur_angryballs.maladroit.modele.decorateur.Bille;
 import musique.SonLong;
 import outilsvues.EcouteurTerminaison;
 

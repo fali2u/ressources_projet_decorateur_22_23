@@ -1,10 +1,12 @@
 package exodecorateur_angryballs.maladroit.vues;
 
+import exodecorateur_angryballs.maladroit.modele.decorateur.Bille;
+import exodecorateur_angryballs.maladroit.modele.decorateur.dessineur.Dessineur;
+import exodecorateur_angryballs.maladroit.modele.decorateur.dessineur.DessineurJ;
+
 import java.awt.Canvas;
 import java.awt.Graphics;
 import java.util.Vector;
-
-import exodecorateur_angryballs.maladroit.modele.Bille;
 
 
 /**
@@ -28,9 +30,9 @@ this.billes = billes;
     public void paint(Graphics graphics)
     {
     int i;
-    
+        Dessineur d = new DessineurJ(graphics);
     for ( i = 0; i < this.billes.size(); ++i)
-        this.billes.get(i).dessine(graphics);
+        this.billes.get(i).dessine(d);
     
     //System.out.println("billes dans le billard = " + billes);
     }
